@@ -1,0 +1,81 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# virtual env
+.venv/
+venv/
+env/
+ENV/
+
+# distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# =========================
+# Environment variables
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Logs
+# =========================
+*.log
+logs/
+
+# =========================
+# Testing / coverage
+# =========================
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# =========================
+# Jupyter
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# OS
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Vector stores / local AI data
+# =========================
+chroma/
+qdrant_storage/
+*.db
+*.sqlite3
+
+# =========================
+# Node / React (if frontend)
+# =========================
+node_modules/
+build/
+.next/
+out/
+
+# =========================
+# Temporary files
+# =========================
+tmp/
+temp/
