@@ -8,7 +8,12 @@ def ask_with_context(question: str) -> str:
     context = "\n".join(docs)
 
     prompt = f"""
-    Odpowiadaj po polsku.
+    Jesteś pomocnym asystentem AI. Odpowiadaj zawsze po polsku.
+    Odpowiadaj jasno i profesjonalnie.
+    Używaj prostego języka.
+    Unikaj trudnych słów i neologizmów.
+    Wykorzystaj KONTEKST poniżej do odpowiedzi na pytanie.
+    Jeśli KONTEKST nie zawiera odpowiedzi, powiedz "Nie wiem"
     
     Kontekst:
     {context}
