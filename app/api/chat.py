@@ -1,6 +1,7 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
-from app.services.llm_service import generate_response
+
+from app.pipelines.rag_pipeline import ask_with_context
 
 router = APIRouter()
 
@@ -15,5 +16,5 @@ class ChatResponse(BaseModel):
 
 @router.post("/", response_model=ChatResponse)
 def chat(request: ChatRequest):
-    answer = generate_response(request.question)
+    answer = ask_with_context(request.question)
     return ChatResponse(answer=answer)
