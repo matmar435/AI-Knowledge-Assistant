@@ -1,14 +1,19 @@
 import requests
 
-OLLAMA_URL = ""
+OLLAMA_URL = "http://localhost:11434/api/generate"
+
 
 def generate_response(prompt: str) -> str:
     payload = {
-        "model" : "llama3",
-        "prompt" : prompt,
-        "stream" : False
+        "model": "llama3",
+        "prompt": prompt,
+        "stream": False
     }
 
-    response = requests.post(OLLAMA_URL, json=payload)
-    data = response.json()
-    return data["response"]
+    try:
+        response = requests.post(OLLAMA_URL, json=payload)
+        response.raise_for_status()
+        data = response.json()
+        return data["response"]
+    except Exception as e:
+        return f"LLM error: {e}"
