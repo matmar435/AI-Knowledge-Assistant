@@ -1,0 +1,3 @@
+FastAPI to nowoczesny framework webowy do budowy API w Pythonie.
+RAG oznacza Retrieval Augmented Generation.
+Embedding to wektorowa reprezentacja tekstu.
