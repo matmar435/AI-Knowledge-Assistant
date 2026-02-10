@@ -3,7 +3,14 @@ import requests
 OLLAMA_URL = "http://localhost:11434/api/generate"
 
 
-def generate_response(prompt: str) -> str:
+def generate_response(question: str) -> str:
+    prompt = f"""
+        Jesteś pomocnym asystentem AI.
+        Odpowiadaj zawsze po polsku.
+
+        Pytanie:
+        {question}
+        """
     payload = {
         "model": "llama3",
         "prompt": prompt,
