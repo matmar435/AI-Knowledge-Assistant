@@ -1,4 +1,5 @@
 import os
+import uuid
 
 import chromadb
 from sentence_transformers import SentenceTransformer
@@ -19,7 +20,7 @@ def add_documents(texts):
     collection.add(
         documents=texts,
         embeddings=embeddings,
-        ids=[str(i) for i in range(len(texts))]
+        ids=[str(uuid.uuid4()) for i in range(len(texts))]
     )
 
 
