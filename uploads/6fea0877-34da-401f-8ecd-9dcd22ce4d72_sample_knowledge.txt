@@ -1,0 +1,5 @@
+RAG (Retrieval-Augmented Generation) to metoda łącząca wyszukiwanie
+informacji z generowaniem odpowiedzi przez model językowy.
+
+System najpierw znajduje pasujące fragmenty wiedzy w bazie danych, a
+następnie wykorzystuje je jako kontekst do tworzenia odpowiedzi.
