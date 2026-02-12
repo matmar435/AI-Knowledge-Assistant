@@ -6,11 +6,26 @@ from fastapi import APIRouter, UploadFile, File
 from app.models.document import DocumentRequest
 from app.services.file_parsers import read_pdf, read_docx, read_txt
 from app.services.ingestion import chunk_text
-from app.services.vector_store import add_documents
+from app.services.vector_store import add_documents, collection
 
 router = APIRouter()
 UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
+
+
+@router.get("/")
+def list_documents(limit: int = 20):
+    data = collection.get(limit=limit)
+    return {
+        "count": len(data["ids"]),
+        "documents": [
+            {
+                "id": data["ids"][i],
+                "text": data["documents"][i][:200]
+            }
+            for i in range(len(data["ids"]))
+        ]
+    }
 
 
 @router.post("/upload")
