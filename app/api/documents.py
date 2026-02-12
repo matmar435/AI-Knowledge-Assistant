@@ -51,3 +51,9 @@ async def upload_file(file: UploadFile = File(...)):
     add_documents(chunks)
 
     return {"status": "upload", "chunks": len(chunks)}
+
+
+@router.delete("/{doc_id")
+def delete_document(doc_id: str):
+    collection.delete(ids=[doc_id])
+    return {"status": "deleted", "id": doc_id}
